@@ -136,6 +136,11 @@ function addwrongQuiz(wrong) {
         "<span style='color:green; font-weight:600'>" + currentQuiz.options[currentQuiz.answer] + "</span>"
     wrongQuizAnswer.className = "wrongAnswer"
     document.getElementById("wrongAnswerQuiz").appendChild(wrongQuizAnswer)
+
+    let referenceLink = document.createElement("div")
+    referenceLink.innerHTML = "<a href='" + currentQuiz.reference + "' target='_blank' class='reference'>➤ Tìm hiểu thêm</a>"
+    referenceLink.className = "referenceContainer"
+    document.getElementById("wrongAnswerQuiz").appendChild(referenceLink)
 }
 
 function notAcceptingAnswer() {
@@ -199,13 +204,14 @@ function hideWrongAnswerBox() {
 function restart() {
     endGameBox.classList.add("hide")
     startBox.classList.remove("hide")
-    document.getElementById("score").innerHTML = "0"
     nextButton.innerText = 'Câu tiếp theo'
+    document.getElementById("score").innerHTML = "0"
     document.getElementById("wrongAnswerQuiz").innerHTML = ''
+    document.getElementById("progressMark").innerHTML = ''
     setTimeout(function() { clickSound.play() }, 50)
     if (instruction.style.display != "none")
         hideInstruction()
     if (firework.style.display != "none")
         firework.classList.add("hide")
-    document.getElementById("progressMark").innerHTML = ''
+
 }

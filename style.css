@@ -154,7 +154,7 @@ h3 {
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
-    width: 70vw;
+    width: 45vw;
     margin: auto;
     margin-bottom: 1rem;
 }
@@ -223,9 +223,28 @@ h3 {
 }
 
 .wrongAnswer {
-    margin-bottom: 2rem;
     margin-left: 1.5rem;
     padding-left: 11%;
+    margin-bottom: 0.5rem;
+}
+
+.referenceContainer {
+    margin-bottom: 2.5rem;
+}
+
+.reference {
+    margin-left: 1.5rem;
+    padding-left: 11%;
+    font-weight: 500;
+}
+
+.reference:link,
+.reference:visited {
+    color: green;
+}
+
+.reference:hover {
+    font-weight: 600;
 }
 
 .hide {
