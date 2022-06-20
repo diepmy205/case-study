@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japan Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="#">
+</head>
+
+<body>
+    <div class="startBox" id="startBox">
+        <h1>🎌 Game đố vui 🎌</h1>
+        <div class="startButton button" onclick="startGame()">Bắt đầu</div>
+        <div class="instructionButton button" onclick="showInstruction()">Hướng dẫn</div>
+        <div class="instruction hide" id="instruction">
+            <div id="instructionText"></div>
+            <div onclick="hideInstruction()" id="hideInstruction">Đóng hướng dẫn ✖ </div>
+        </div>
+        <div id="sakura" style="position:absolute; left:50%; top: 60%; transform: translate(-50%, -50%)">
+            <img src="/images/sakura.gif" style="width: 650px; height: auto; opacity: 0.7;">
+        </div>
+    </div>
+
+    <div class="gameBox hide" id="gameBox">
+        <div class="progressAndScore">
+            <div class="progressBar">
+                <div id="progressText">
+                    Bạn đang ở câu thứ 1 trên 10 câu
+                </div>
+                <div id="progressMark">
+                </div>
+            </div>
+            <div class="scoreBox">
+                <div id="scoreText">
+                    Số điểm:
+                </div>
+                <div id="score">
+                    0
+                </div>
+            </div>
+        </div>
+        <hr style="width: 70%; position: absolute; top: 6.5rem; background-color:rgb(184, 219, 229)">
+        <div>
+            <div class="question" id="question">
+
+            </div>
+            <div class="optionsContainer" id="optionsContainer">
+
+            </div>
+        </div>
+
+        <div class="nextButton" id="nextButton" onclick="next()">Câu tiếp theo</div>
+    </div>
+
+    <div class="endGameBox hide" id="endGameBox">
+        <h2>Kết quả</h2>
+        <div class="endGameBoxText" id="lastCorrectAnswer"></div>
+        <div class="endGameBoxText" id="lastScore"></div>
+        <div id="playAgainButton" onclick="restart()">Chơi lại</div>
+        <div class="hide" id="reviewButton" onclick="showWrongAnswerBox()">Xem lại câu sai</div>
+        <div class="hide" id="firework" style="position:absolute; left:50%; top:30%; transform: translate(-50%, -50%)">
+            <img src="/images/firework.gif">
+        </div>
+    </div>
+
+    <div class="wrongAnswerBox hide" id="wrongAnswerBox">
+        <div id="closeButton" onclick="hideWrongAnswerBox()">Đóng ✖</div>
+        <h3>Các câu bạn trả lời sai:</h3>
+        <div id="wrongAnswerQuiz"></div>
+    </div>
+
+</body>
+<script src="quiz.js "></script>
+<script src="game.js "></script>
+
+</html>
